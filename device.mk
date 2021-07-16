@@ -30,6 +30,9 @@ $(call inherit-product, vendor/xiaomi/miuicamera/config.mk)
 PRODUCT_PACKAGES += \
     BoostFrameworkOverlay
 
+# Enable project quotas and casefolding for emulated storage without sdcardfs
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
