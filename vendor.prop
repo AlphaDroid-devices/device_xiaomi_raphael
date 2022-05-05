@@ -185,6 +185,11 @@ renderthread.skia.reduceopstasksplitting=true
 debug.hwui.renderer=skiagl
 debug.sf.enable_egl_image_tracker=1
 
+# IFAAService
+persist.vendor.sys.fp.udfps.location.X_Y=445,1931
+persist.vendor.sys.fp.udfps.size.width_height=190,190
+ro.hardware.fp.udfps=true
+
 # Incremental
 ro.incremental.enable=1
 
