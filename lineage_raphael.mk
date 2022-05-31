@@ -23,6 +23,9 @@ $(call inherit-product, device/xiaomi/raphael/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# Viper
+$(call inherit-product, vendor/v4afx/config.mk)
+
 # UDFPS animations
 EXTRA_UDFPS_ANIMATIONS := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
