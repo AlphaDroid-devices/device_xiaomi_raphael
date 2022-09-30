@@ -9,3 +9,9 @@
 
 # FPS Info
 /sys/class/drm/card0/sde-crtc-0/measured_fps                         u:object_r:vendor_sysfs_graphics:s0
+
+# Livedisplay
+/vendor/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.raphael    u:object_r:hal_lineage_livedisplay_qti_exec:s0
+
+# HBM
+/sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm           u:object_r:vendor_sysfs_hbm:s0
