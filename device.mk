@@ -30,6 +30,10 @@ $(call inherit-product, vendor/xiaomi/miuicamera/config.mk)
 PRODUCT_PACKAGES += \
     BoostFrameworkOverlay
 
+# AAPT
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
