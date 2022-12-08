@@ -26,6 +26,7 @@ on post-fs-data
     write /sys/block/sdf/queue/read_ahead_kb 2048
 
 on property:vendor.post_boot.parsed=1
+
 # IRQ Tuning
 # IRQ 70: msm_drm0
 # IRQ 222: kgsl_3d0_irq
