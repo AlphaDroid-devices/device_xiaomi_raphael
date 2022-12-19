@@ -112,6 +112,9 @@ persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 ro.bluetooth.a2dp_offload.supported=true
 vendor.qcom.bluetooth.soc=cherokee
 
+# Cached app compaction
+persist.device_config.activity_manager.use_compaction=true
+
 # Camera
 camera.disable_zsl_mode=true
 persist.vendor.camera.logInfoMask=false
