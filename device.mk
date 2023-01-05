@@ -295,7 +295,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.raphael
+    android.hardware.light-service.xiaomi
 
 # Livedisplay
 PRODUCT_PACKAGES += \
