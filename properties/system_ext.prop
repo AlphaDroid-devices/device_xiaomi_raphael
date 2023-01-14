@@ -50,3 +50,4 @@ rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 
 # Time
 persist.timed.enable=true
+
