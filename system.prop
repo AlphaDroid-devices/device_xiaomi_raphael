@@ -159,3 +159,7 @@ ro.launcher.blur.appLaunch=0
 
 # Disable Skia tracing by default
 debug.hwui.skia_atrace_enabled=false
+
+# ART
+dalvik.vm.dex2oat-filter=everything
+dalvik.vm.image-dex2oat-filter=everything
