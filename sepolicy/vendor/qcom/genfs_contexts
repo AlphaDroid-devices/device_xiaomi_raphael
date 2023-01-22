@@ -22,9 +22,6 @@ genfscon sysfs /devices/platform/goodix_ts.0/udfps_enabled u:object_r:vendor_sys
 genfscon sysfs /devices/platform/goodix_ts.0/double_tap_pressed u:object_r:vendor_sysfs_sensors:s0
 genfscon sysfs /devices/platform/goodix_ts.0/double_tap_enabled u:object_r:vendor_sysfs_sensors:s0
 
-# CSC DC Dimming
-genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/dc_dim u:object_r:vendor_sysfs_graphics:s0
-
 # label more sysf wakeup
 
 genfscon sysfs /devices/virtual/wakeup/wakeup[0-101][0-101]/active_count u:object_r:sysfs_wakeup:s0
@@ -37,3 +34,9 @@ genfscon sysfs /devices/virtual/wakeup/wakeup[0-101][0-101]/name u:object_r:sysf
 genfscon sysfs /devices/virtual/wakeup/wakeup[0-101][0-101]/prevent_suspend_time_ms u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/wakeup/wakeup[0-101][0-101]/total_time_ms u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/wakeup/wakeup[0-101][0-101]/wakeup_count u:object_r:sysfs_wakeup:s0
+
+# FPS Info
+genfscon sysfs /class/drm/sde-crtc-0/measured_fps                               u:object_r:vendor_sysfs_graphics:s0
+
+# CSC DC Dimming
+genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/dc_dim u:object_r:vendor_sysfs_graphics:s0
