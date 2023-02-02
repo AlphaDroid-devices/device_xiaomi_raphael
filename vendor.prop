@@ -179,6 +179,7 @@ vendor.gralloc.disable_ubwc=0
 debug.renderengine.backend=skiaglthreaded
 renderthread.skia.reduceopstasksplitting=true
 debug.hwui.renderer=skiagl
+debug.sf.enable_egl_image_tracker=1
 
 # Incremental
 ro.incremental.enable=1
