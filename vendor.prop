@@ -206,8 +206,16 @@ ro.vendor.se.type=eSE,HCE,UICC
 vendor.power.pasr.enabled=true
 
 # Perf
+ro.vendor.perf-hal.ver=2.2
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.perf.scroll_opt=true
+ro.vendor.qspm.enable=true
+ro.vendor.beluga.p=0x3
+ro.vendor.beluga.c=0x4800
+ro.vendor.beluga.s=0x900
+ro.vendor.beluga.t=0x240
+vendor.power.pasr.enabled=true
+vendor.pasr.activemode.enabled=true
 
 # RIL
 persist.vendor.qti.telephony.vt_cam_interface=2
