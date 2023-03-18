@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import org.lineageos.settings.doze.DozeUtils;
+import org.lineageos.settings.dirac.DiracUtils;
 import org.lineageos.settings.popupcamera.PopupCameraUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
@@ -33,6 +34,12 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         if (DEBUG)
             Log.d(TAG, "Received boot completed intent");
         DozeUtils.checkDozeService(context);
+
+	try {
+        DiracUtils.initialize(context);
+        } catch (Exception e) {
+            Log.d(TAG, "Dirac is not present in system");
+        }
         PopupCameraUtils.startService(context);
     }
 }
