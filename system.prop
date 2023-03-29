@@ -150,3 +150,6 @@ debug.media.transcoding.codec_max_operating_rate_1080P=120
 
 # Disable Blur on app-launch
 ro.launcher.blur.appLaunch=0
+
+# Disable Skia tracing by default
+debug.hwui.skia_atrace_enabled=false
