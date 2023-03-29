@@ -145,3 +145,6 @@ persist.timed.enable=true
 
 # WiFi
 config.disable_rtt=true
+
+# Disable Skia tracing by default
+debug.hwui.skia_atrace_enabled=false
