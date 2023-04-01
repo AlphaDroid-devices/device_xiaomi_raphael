@@ -17,3 +17,9 @@ persist.radio.meid             u:object_r:deviceid_prop:s0
 ro.ril.miui.imei               u:object_r:deviceid_prop:s0
 ro.ril.oem.imei                u:object_r:deviceid_prop:s0
 ro.ril.oem.meid                u:object_r:deviceid_prop:s0
+
+media.stagefright.extractremote                   u:object_r:exported_system_prop:s0
+persist.media.metrics.enabled                       u:object_r:exported_system_prop:s0
+ro.max.fling_velocity          u:object_r:exported_system_prop:s0
+ro.min.fling_velocity                   u:object_r:exported_system_prop:s0
+ro.hardware.chipname                       u:object_r:exported_system_prop:s0
