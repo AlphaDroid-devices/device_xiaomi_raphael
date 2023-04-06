@@ -26,11 +26,7 @@ $(call inherit-product-if-exists, vendor/GcamBSG/GcamBSG-vendor.mk)
 # MiuiCamera
 $(call inherit-product, vendor/xiaomi/miuicamera/config.mk)
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
-
-# RRO (pixys)
+# RRO fw_boost
 PRODUCT_PACKAGES += \
     BoostFrameworkOverlay
 

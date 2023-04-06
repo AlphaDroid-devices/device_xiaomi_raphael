@@ -965,17 +965,6 @@ vendor/lib64/libOmxVpp.so
 vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libswvdec.so
 
-# Pasrmanager
--vendor/app/pasrservice/pasrservice.apk
-vendor/bin/hw/vendor.qti.power.pasrmanager@1.0-service
-vendor/etc/init/vendor.qti.power.pasrmanager@1.0-service.rc
-vendor/lib/hw/vendor.qti.power.pasrmanager@1.0-impl.so
-vendor/lib/vendor.qti.memory.pasrmanager@1.0.so
-vendor/lib/vendor.qti.power.pasrmanager@1.0.so
-vendor/lib64/hw/vendor.qti.power.pasrmanager@1.0-impl.so
-vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so
-vendor/lib64/vendor.qti.power.pasrmanager@1.0.so
-
 # PD
 vendor/bin/pd-mapper
 vendor/lib/libpdmapper.so
