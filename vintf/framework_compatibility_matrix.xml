@@ -620,14 +620,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.qti.power.pasrmanager</name>
-        <version>1.0</version>
-        <interface>
-            <name>IPasrManager</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.xiaomi.hardware.fingerprintextension</name>
         <version>1.0</version>
         <interface>
@@ -648,6 +640,22 @@
         <version>1.0</version>
         <interface>
             <name>IMotor</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.memory.pasrmanager</name>
+        <version>1.1</version>
+        <interface>
+            <name>IPasrManager</name>
+            <instance>pasrhal</instance>
+        </interface>
+    </hal>
+        <hal format="hidl" optional="true">
+        <name>vendor.qti.power.pasrmanager</name>
+        <version>1.1</version>
+        <interface>
+            <name>IPasrManager</name>
             <instance>default</instance>
         </interface>
     </hal>
