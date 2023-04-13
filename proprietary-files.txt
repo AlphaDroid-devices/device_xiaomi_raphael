@@ -1047,10 +1047,10 @@ system_ext/lib64/vendor.qti.hardware.perf@2.2.so|2023cf8735118e3a311a7dc78984e8d
 system_ext/lib64/vendor.qti.hardware.perf@2.3.so|f30fd5a38938a148425609dfce43bb7b8499d957
 system_ext/lib64/vendor.qti.qspmhal@1.0.so|b60f6dc840a3a69e5743ad0eaeb386bc714d7841
 
-# Perf (vendor) - from LA.UM.9.14.r1-20200-LAHAINA.QSSI13.0
+# Perf (vendor) - from from LA.UM.9.1.r1-12900-SMxxx0.0 
 vendor/app/pasrservice/pasrservice.apk|38dec995caf51b42550fded391b31f62f974d621
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service|52e0edaa69bed29d70e1fa2d3f6923ddb8d4047d
-vendor/bin/hw/vendor.qti.hardware.perf@2.2-service|d7dc9aa34d48ed62f469a89bb84554cbc72f44aa
+vendor/bin/hw/vendor.qti.hardware.perf@2.2-service|4627a51573e47a54ebf96ea3623d647588a84277
 vendor/bin/hw/vendor.qti.hardware.servicetracker@1.2-service|43271910678884fc8ee9a01e27595929187411e0
 vendor/bin/hw/vendor.qti.memory.pasrmanager@1.0-service|7cc40e613dff04728db3a6a7302f535a92da055e
 vendor/bin/hw/vendor.qti.psiclient@1.0-service|aaa044eb189239d58f9014f390211bf4d3959f88
@@ -1097,26 +1097,26 @@ vendor/lib/vendor.qti.qspmhal@1.0.so|f1f3f0effb3feca209c24b2f41137363d401c749
 vendor/lib64/hw/vendor.qti.hardware.servicetracker@1.2-impl.so|57df1a5230017753d4c7525a50b3ca3df01c5f35
 vendor/lib64/hw/vendor.qti.memory.pasrmanager@1.0-impl.so|a73a547e31becec3c76e1565f63bd4618aa09d73
 vendor/lib64/libadaptlaunch.so|264897f197ca6139354a498d206f93a2d86a001b
-vendor/lib64/libappclassifier.so|96ef3fa3efcf47438a218b63ce360be006a27a05
+vendor/lib64/libappclassifier.so|684c838a9968ea09685e5edbe990ee5bee91a9a8
 vendor/lib64/libgameoptfeature.so|9c1d467940d4f2eb2829cff64645304234c6be69
 vendor/lib64/libgplaf.so|0ab48efc22a2b260c09b3726dd896caf631c1ad2
-vendor/lib64/liblearningmodule.so|a993e902a3b111e26bef6eba75120ada36f3666d
+vendor/lib64/liblearningmodule.so|064545ff65df121399113d3561ec82a0b135766c
 vendor/lib64/liblmutils-ns.so|f360681785fe8506785d2020d69130ceaaefb693
 vendor/lib64/libmemperfd.so|27b50cbca03cdb743572ff94b492f7a5fdf94a5f
 vendor/lib64/libmeters-ns.so|157ad9ad1673764dfa5530d91811c4c13f4fd5eb
-vendor/lib64/libmeters.so|e2881b626a46e7634e813ebaceda09889ad4b616
+vendor/lib64/libmeters.so|5b929c11eb2976fcab2934848a0d0b49b0fafb36
 vendor/lib64/libpasrutils.so|8bd702eff22083a4186c1417556cf9c3d3295c3a
-vendor/lib64/libperfconfig.so|c69a504e3e9dd1c99770ee72cce77a9213ce6473
-vendor/lib64/libperfgluelayer.so|9b23da83ce8c1989872923e2603161a6346a9387
+vendor/lib64/libperfconfig.so|06fc5f5cfb6dae18bba45372ff424a97769a60dd
+vendor/lib64/libperfgluelayer.so|5fd74627e6da137083a450e542673d4027d43d57
 vendor/lib64/libperfioctl.so|95a5e7b4b7cccdff8a9cf1c14667e54ad4d777f5
 vendor/lib64/libpowercallback.so|a7c68298cbfb8774fa01eccb57b1a32631b12e3f
 vendor/lib64/libpowercore.so|2a38aff28f6a70f82232c01fa9ae49a5ab8bd8db
 vendor/lib64/libprekill.so|2c6455fac3fe5f6dbd2c2cb8d5f605f297835063
 vendor/lib64/libqti-iopd-client.so|9e7561634158cd01b037e740e51cb22cd1119e04
 vendor/lib64/libqti-iopd.so|54d179d3fa04ee6e30e1053ae91d08ef2cba9007
-vendor/lib64/libqti-perfd-client.so|5bf60caf4d1827cb0f4d1b23df8c19c15034a14a
-vendor/lib64/libqti-perfd.so|c813df3f3b9e29cec8a3ff09e43b9afc5985d050
-vendor/lib64/libqti-util.so|edfedf2e31f21eaa43914bf3cd9c81c5437a99a3
+vendor/lib64/libqti-perfd-client.so|62c21bcb8cac644c702fb53e3274ccdb1298c42d
+vendor/lib64/libqti-perfd.so|cd9c5dc9c440101f803e4393e28aad0bffda7284
+vendor/lib64/libqti-util.so|48519e0baba84978b8593576579d33cd78cd0f8f
 vendor/lib64/libqti-utils.so|1c9a0cb92802ba2314dafbe0152a7568323fff06
 vendor/lib64/libreffeature.so|e158f072f0e003c5e47a54befa09ddc1e306f5aa
 vendor/lib64/libskewknob.so|f25b655771a47cc11466e7ab9437fc0b3753a558
@@ -1125,12 +1125,17 @@ vendor/lib64/vendor.qti.hardware.iop@1.0.so|4d62e0d7d575dba2bd90caf27d8e54bfec04
 vendor/lib64/vendor.qti.hardware.iop@2.0.so|81564be065d66ec65b0bfc523102ae63b2f7249f
 vendor/lib64/vendor.qti.hardware.perf@2.0.so|9633d7188e3179017fdbc60e09b654d39822c1ad
 vendor/lib64/vendor.qti.hardware.perf@2.1.so|10cd89e4fb77fcb82b2019303c3b97fb7e09e29c
-vendor/lib64/vendor.qti.hardware.perf@2.2.so|86c815d8713e6e411ae22e7fba451a292345d6b1
+vendor/lib64/vendor.qti.hardware.perf@2.2.so|88c13e106ade95b947f64de3199602a43beb3034
 vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so|fc3c761b2654b83a4216eadf8dc8698540b2de1f
 vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so|db794e0ba79fd310a8427cbcae03be05008c429f
-vendor/lib64/vendor.qti.power.pasrmanager@1.0.so|6b5a8ca7b57e6515882dab290028c766b7bbaa41
 vendor/lib64/vendor.qti.qspmhal@1.0-impl.so|171884a6d4751c4307e558c0a3ffccdab3c0c23f
 vendor/lib64/vendor.qti.qspmhal@1.0.so|bbb1948c05d0cba255c27b7e6511b163fa8373a8
+
+# Pasrmanager (vendor) - from LA.UM.9.1.r1-12900-SMxxx0.0
+vendor/bin/hw/vendor.qti.power.pasrmanager@1.0-service|27dd1f54cfdc65f365c6b63e9b13bdb6ade5aa70
+vendor/etc/init/vendor.qti.power.pasrmanager@1.0-service.rc|b34c1b9179c89cd47adce145bae9a609e5141bc0
+vendor/lib64/hw/vendor.qti.power.pasrmanager@1.0-impl.so|4e83bd83fa439f15dc3c0a2256eadd81d6c45386
+vendor/lib64/vendor.qti.power.pasrmanager@1.0.so|ac738d8aba807b3b150618ae89a9994453fd7b1f
 
 # Peripheral manager
 vendor/bin/pm-proxy
