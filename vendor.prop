@@ -138,6 +138,7 @@ vendor.display.disable_ui_3d_tonemap=1
 vendor.display.enable_force_split=1
 vendor.display.enable_null_display=0
 vendor.display.enable_optimize_refresh=1
+vendor.display.disable_dynamic_fps=1
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
 
