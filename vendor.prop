@@ -111,6 +111,8 @@ persist.vendor.qcom.bluetooth.soc=cherokee
 persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 ro.bluetooth.a2dp_offload.supported=true
 vendor.qcom.bluetooth.soc=cherokee
+persist.bluetooth.bqr.event_mask=30
+persist.bluetooth.bqr.min_interval_ms=500
 
 # Cached app compaction
 persist.device_config.activity_manager.use_compaction=true
