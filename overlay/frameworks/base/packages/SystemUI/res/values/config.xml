@@ -74,4 +74,7 @@
 
     <!-- FPS tiles -->
     <bool name="show_fps_overlay">true</bool>
+
+    <!-- Whether to find optimal display refresh rate when using udfps -->
+    <bool name="config_udfpsOptimalRefreshRate">false</bool>
 </resources>
