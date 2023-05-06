@@ -11,6 +11,7 @@ LOCAL_OVERRIDES_PACKAGES := \
     PixelWallpapers2022 \
     Photos \
     Aperture \
+    FilesPrebuilt \
     DevicePolicyPrebuilt \
     AmbientSensePrebuilt \
     YouTube \
