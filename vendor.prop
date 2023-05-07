@@ -211,7 +211,7 @@ ro.vendor.se.type=eSE,HCE,UICC
 vendor.power.pasr.enabled=true
 
 # Perf
-ro.vendor.extension_library=libqti-perfd-client_system.so
+ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.perf-hal.ver=2.2
 ro.vendor.perf.scroll_opt=true
 ro.vendor.qspm.enable=true
