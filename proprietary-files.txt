@@ -833,6 +833,9 @@ vendor/lib64/libqti-iopd.so
 vendor/lib64/vendor.qti.hardware.iop@1.0.so
 vendor/lib64/vendor.qti.hardware.iop@2.0.so
 
+# IRQ balance - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0
+vendor/bin/msm_irqbalance|b075c2f4092c175950a2c26d19bf2013e2efd6d5
+
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
 vendor/bin/hw/android.hardware.keymaster@4.1-service-qti
@@ -1062,7 +1065,6 @@ vendor/bin/hw/vendor.qti.hardware.perf@2.2-service|4627a51573e47a54ebf96ea3623d6
 vendor/bin/hw/vendor.qti.hardware.servicetracker@1.2-service|43271910678884fc8ee9a01e27595929187411e0
 vendor/bin/hw/vendor.qti.memory.pasrmanager@1.0-service|7cc40e613dff04728db3a6a7302f535a92da055e
 vendor/bin/hw/vendor.qti.psiclient@1.0-service|aaa044eb189239d58f9014f390211bf4d3959f88
-vendor/bin/msm_irqbalance|f16cd993154581baaf60d4a1f2d9f8b0a5ee1f82
 vendor/bin/poweropt-service|19e9ff11da10fc14ca56cccdde5928f427c947fa
 vendor/bin/vendor.qti.qspmhal@1.0-service|7a9de1a26a3ba7cceca310e0d9f3aa1b39ddf24b
 vendor/etc/init/poweropt-service-disable.rc|4f9c7d0eea74e64cce549b4c7a37d6eee9bdaf0e
