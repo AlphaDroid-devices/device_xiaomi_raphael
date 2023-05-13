@@ -26,9 +26,6 @@ $(call inherit-product-if-exists, vendor/GcamBSG/GcamBSG-vendor.mk)
 # MiuiCamera
 $(call inherit-product, vendor/xiaomi/miuicamera/config.mk)
 
-# FWB BOOST
-PRODUCT_PACKAGES += \
-    BoostFrameworkOverlay
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
