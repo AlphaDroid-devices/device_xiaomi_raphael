@@ -15,6 +15,7 @@ LOCAL_OVERRIDES_PACKAGES := \
     DevicePolicyPrebuilt \
     AmbientSensePrebuilt \
     YouTube \
+    Gallery2 \
     Eleven \
     AudioFX
 
