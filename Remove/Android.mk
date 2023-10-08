@@ -17,7 +17,6 @@ LOCAL_OVERRIDES_PACKAGES := \
     YouTube \
     Gallery2 \
     Eleven \
-    AndroidAutoStubPrebuilt \
     AudioFX
 
 LOCAL_UNINSTALLABLE_MODULE := true
