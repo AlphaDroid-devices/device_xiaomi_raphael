@@ -1,5 +1,9 @@
 #Expose aux camera for below packages
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.xiaomi.cameratest,com.xiaomi.factory.mmi,com.xiaomi.runin
+# Adb
+persist.service.adb.enable=1                                                    
+persist.service.debuggable=1
+persist.sys.usb.config=mtp,adb
 
 # Camera
 persist.vendor.camera.privapp.list=com.android.camera
