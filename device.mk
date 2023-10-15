@@ -410,6 +410,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_raphael/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_raphael/com.nxp.mifare.xml
 
+PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
+
 # Perf
 PRODUCT_PACKAGES += \
     libqti-perfd-client
