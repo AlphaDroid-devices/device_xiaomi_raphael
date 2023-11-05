@@ -66,7 +66,6 @@ PRODUCT_PACKAGES += \
 
 # Dex/ART optimization
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
-PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
 USE_DEX2OAT_DEBUG := false
 
 # Audio
@@ -266,7 +265,7 @@ PRODUCT_PACKAGES += \
 
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
-    RemovePackagesRaphael
+    RemovePackages
 
 # Storage health HAL
 PRODUCT_PACKAGES += \
