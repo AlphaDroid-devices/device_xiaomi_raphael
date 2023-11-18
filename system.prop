@@ -164,6 +164,6 @@ ro.launcher.blur.appLaunch=0
 # Disable Skia tracing by default
 debug.hwui.skia_atrace_enabled=false
 
-# ART
-dalvik.vm.dex2oat-filter=everything
-dalvik.vm.image-dex2oat-filter=everything
+# SurfaceFlinger
+ro.surface_flinger.vsync_event_phase_offset_ns=2000000
+ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
