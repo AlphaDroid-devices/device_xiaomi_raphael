@@ -976,13 +976,56 @@ vendor/lib64/libOmxVpp.so
 vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libswvdec.so
 
+# Pasrmanager
+-vendor/app/pasrservice/pasrservice.apk
+vendor/bin/hw/vendor.qti.power.pasrmanager@1.0-service
+vendor/etc/init/vendor.qti.power.pasrmanager@1.0-service.rc
+vendor/lib/hw/vendor.qti.power.pasrmanager@1.0-impl.so
+vendor/lib/vendor.qti.memory.pasrmanager@1.0.so
+vendor/lib/vendor.qti.power.pasrmanager@1.0.so
+vendor/lib64/hw/vendor.qti.power.pasrmanager@1.0-impl.so
+vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so
+vendor/lib64/vendor.qti.power.pasrmanager@1.0.so
+
 # PD
 vendor/bin/pd-mapper
 vendor/lib/libpdmapper.so
 vendor/lib64/libpdmapper.so
 vendor/lib64/libpdnotifier.so
 
+# Performance
+vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
+vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc
+vendor/etc/lm/AdaptLaunchFeature.xml
+vendor/etc/lm/AppClassifierFeature.xml
+vendor/etc/lm/GameOptimizationFeature.xml
+vendor/etc/perf/commonresourceconfigs.xml
+vendor/etc/perf/perfboostsconfig.xml
+vendor/etc/perf/perfconfigstore.xml
+vendor/etc/perf/targetconfig.xml
+vendor/etc/perf/targetresourceconfigs.xml
+vendor/etc/powerhint.xml
+vendor/lib64/libadaptlaunch.so
+vendor/lib64/libappclassifier.so
+vendor/lib64/libgameoptfeature.so
+vendor/lib/libperfconfig.so
+vendor/lib/libperfgluelayer.so
+vendor/lib/libperfioctl.so
+vendor/lib/libqti-perfd-client.so
+vendor/lib/libqti-perfd.so
+vendor/lib/libqti-util.so
+vendor/lib64/liblearningmodule.so
+vendor/lib64/libmeters-ns.so
+vendor/lib64/libmeters.so
+vendor/lib64/libperfconfig.so
+vendor/lib64/libperfgluelayer.so
+vendor/lib64/libperfioctl.so
+vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqti-perfd.so
+vendor/lib64/libqti-util.so
+vendor/lib64/libreffeature.so
 
+<<<<<<< HEAD
 # Perf (configs) - from  LA.VENDOR.1.0.r1-16000-WAIPIO.QSSI13.0
 vendor/etc/lm/AdaptLaunchFeature.xml|2384a0735410063a0722c83fb5169ada612bbd35
 vendor/etc/lm/AppClassifierFeature.xml|9bb1a5d80b1f39913a288a6607100eab0f104b74
@@ -1148,6 +1191,9 @@ vendor/lib64/hw/vendor.qti.power.pasrmanager@1.0-impl.so|4e83bd83fa439f15dc3c0a2
 vendor/lib64/vendor.qti.power.pasrmanager@1.0.so|ac738d8aba807b3b150618ae89a9994453fd7b1f
 
 # Peripheral manager
+=======
+# Peripheral
+>>>>>>> parent of 47cef33e (REAPPLY: "raphael: Add Support for CLO's Boost framework"")
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
@@ -1162,7 +1208,7 @@ vendor/lib64/vendor.qti.hardware.qccvndhal@1.0.so
 # QDMA
 vendor/lib64/libqdma_file_agent.so
 
-# QTI
+# QMI
 system_ext/etc/permissions/qti_libpermissions.xml
 system_ext/etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
@@ -1205,11 +1251,7 @@ vendor/lib64/libqrtr.so
 vendor/lib64/libqsocket.so
 vendor/lib64/libsystem_health_mon.so
 
-# Qualcomm SoC helper
-vendor/lib/libsoc_helper.so
-vendor/lib64/libsoc_helper.so
-
-# Qualcomm TEE connector
+# QTEE
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
 vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
