@@ -134,9 +134,16 @@ on property:sys.boot_completed=1
     write /sys/class/leds/vibrator/duration 100
     write /sys/class/leds/vibrator/boot_vibrator 1
 
+    # Enable adaptive LMK for all targets &
+    # use Google default LMK series for all 64-bit targets >=2GB.
+    chown /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
+    chown /sys/module/lowmemorykiller/parameters/oom_reaper
+    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
+    write /sys/module/lowmemorykiller/parameters/oom_reaper 1
+
     # Kprofiles tune 
-    write /sys/module/kprofiles/parameters/auto_kprofiles Y
-    write /sys/module/kprofiles/parameters/kp_mode 2
+    write /sys/module/kprofiles/parameters/auto_kp Y
+    write /sys/kernel/kprofiles/kp_mode 2
 
     # Uclamp tunings
 
@@ -145,7 +152,7 @@ on property:sys.boot_completed=1
 
     #top-app
     write /dev/cpuset/top-app/uclamp.max max
-    write /dev/cpuset/top-app/uclamp.min 20
+    write /dev/cpuset/top-app/uclamp.min 25
     write /dev/cpuset/top-app/uclamp.boosted 1
     write /dev/cpuset/top-app/uclamp.latency_sensitive 1
 
@@ -156,13 +163,13 @@ on property:sys.boot_completed=1
     write /dev/cpuset/foreground/uclamp.latency_sensitive 1
 
     #background
-    write /dev/cpuset/background/uclamp.max 50
+    write /dev/cpuset/background/uclamp.max 80
     write /dev/cpuset/background/uclamp.min 0
     write /dev/cpuset/background/uclamp.boosted 0
     write /dev/cpuset/background/uclamp.latency_sensitive 0
 
     #system-background
-    write /dev/cpuset/system-background/uclamp.max 50
+    write /dev/cpuset/system-background/uclamp.max 40
     write /dev/cpuset/system-background/uclamp.min 0
     write /dev/cpuset/system-background/uclamp.boosted 0
     write /dev/cpuset/system-background/uclamp.latency_sensitive 0
