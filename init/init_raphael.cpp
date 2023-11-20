@@ -118,9 +118,6 @@ void vendor_load_properties() {
         mod_device = "raphaelin_in_global";
     }
 
-    // SafetyNet workaround
-    property_override("ro.boot.verifiedbootstate", "green");
-
     set_ro_product_prop("device", device);
     set_ro_product_prop("model", model);
     property_override("ro.build.description", description.c_str());
