@@ -81,4 +81,8 @@
     <string name="dirac_preset_country">Country</string>
     <string name="dirac_preset_dance">Dance</string>
     <string name="dirac_preset_metal">Metal</string>
+
+    <!-- DC dimming settings -->
+    <string name="dc_dimming_enable_summary">DC Dimming reduces eye strain in low light conditions (Note: reduce image quality)</string>
+    <string name="dc_dimming_enable_summary_not_supported">DC Dimming is not currently supported by the kernel</string>
 </resources>
