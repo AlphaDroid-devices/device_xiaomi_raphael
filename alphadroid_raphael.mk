@@ -16,7 +16,7 @@ $(call inherit-product, device/xiaomi/raphael/device.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # ViPER4Android FX
-$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
+$(call inherit-product, vendor/v4afx/config.mk)
 
 # Inherit Google Camera
 $(call inherit-product-if-exists, vendor/Gcam/config.mk)
