@@ -29,21 +29,17 @@
 
 import /vendor/etc/init/init.mi_thermald.rc
 
-on early-init
-    write /sys/block/zram0/disksize 4294967296
-
 on init
     wait /dev/block/platform/soc/1d84000.ufshc
     symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
 
     # Boot time fs tuning
+    write /sys/block/sda/queue/iostats 0
+    write /sys/block/sda/queue/scheduler cfq
+    write /sys/block/sda/queue/iosched/slice_idle 0
+    write /sys/block/sda/queue/nr_requests 256
     write /dev/sys/fs/by-name/userdata/data_io_flag 56
     write /dev/sys/fs/by-name/userdata/node_io_flag 56
-    write /sys/block/sde/queue/iostats 0
-    write /sys/block/sde/queue/scheduler cfq
-    write /sys/block/sde/queue/iosched/slice_idle 0
-    write /sys/block/sde/queue/read_ahead_kb 2048
-    write /sys/block/sde/queue/nr_requests 256
 
     # Freezer setup
     write /dev/freezer/frozen/freezer.killable 1
@@ -134,9 +130,16 @@ on property:sys.boot_completed=1
     write /sys/class/leds/vibrator/duration 100
     write /sys/class/leds/vibrator/boot_vibrator 1
 
+    # Enable adaptive LMK for all targets &
+    # use Google default LMK series for all 64-bit targets >=2GB.
+    chown system system /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
+    chown system system /sys/module/lowmemorykiller/parameters/oom_reaper
+    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
+    write /sys/module/lowmemorykiller/parameters/oom_reaper 1
+
     # Kprofiles tune 
-    write /sys/module/kprofiles/parameters/auto_kprofiles Y
-    write /sys/module/kprofiles/parameters/kp_mode 2
+    write /sys/module/kprofiles/parameters/auto_kp Y
+    write /sys/kernel/kprofiles/kp_mode 2
 
     # Uclamp tunings
 
@@ -145,7 +148,7 @@ on property:sys.boot_completed=1
 
     #top-app
     write /dev/cpuset/top-app/uclamp.max max
-    write /dev/cpuset/top-app/uclamp.min 20
+    write /dev/cpuset/top-app/uclamp.min 25
     write /dev/cpuset/top-app/uclamp.boosted 1
     write /dev/cpuset/top-app/uclamp.latency_sensitive 1
 
@@ -156,13 +159,13 @@ on property:sys.boot_completed=1
     write /dev/cpuset/foreground/uclamp.latency_sensitive 1
 
     #background
-    write /dev/cpuset/background/uclamp.max 50
+    write /dev/cpuset/background/uclamp.max 80
     write /dev/cpuset/background/uclamp.min 0
     write /dev/cpuset/background/uclamp.boosted 0
     write /dev/cpuset/background/uclamp.latency_sensitive 0
 
     #system-background
-    write /dev/cpuset/system-background/uclamp.max 50
+    write /dev/cpuset/system-background/uclamp.max 40
     write /dev/cpuset/system-background/uclamp.min 0
     write /dev/cpuset/system-background/uclamp.boosted 0
     write /dev/cpuset/system-background/uclamp.latency_sensitive 0
@@ -179,6 +182,11 @@ on property:sys.boot_completed=1
     write /dev/cpuset/display/uclamp.boosted 0
     write /dev/cpuset/display/uclamp.latency_sensitive 1
 
+    #nnapi-hal
+    write /dev/cpuctl/nnapi-hal/uclamp.max max
+    write /dev/cpuctl/nnapi-hal/uclamp.min 75
+    write /dev/cpuctl/nnapi-hal/uclamp.latency_sensitive 1
+
     #game
     write /dev/cpuset/game/uclamp.max max
     write /dev/cpuset/game/uclamp.min 50
@@ -190,8 +198,6 @@ on property:sys.boot_completed=1
     write /sys/block/sda/queue/nr_requests 128
     write /dev/sys/fs/by-name/userdata/data_io_flag 8
     write /dev/sys/fs/by-name/userdata/node_io_flag 8
-    write /sys/block/sde/queue/read_ahead_kb 128
-    write /sys/block/sde/queue/nr_requests 128
 
 # Setup runtime blkio
     write /dev/blkio/blkio.weight 1000
@@ -210,22 +216,30 @@ on property:sys.boot_completed=1
     write /dev/cpuctl/rt/cpu.shares 20480
     write /dev/cpuctl/top-app/cpu.shares 20480
 
-    # First initialize silver only cpus
+    # For cpusets initialize for Silver Only first and then Silver + Gold
+    # Silver Only configuration cannot work with 0-7
     write /dev/cpuset/audio-app/cpus 1-2
-    write /dev/cpuset/background/cpus 0-2
+    write /dev/cpuset/foreground/cpus 0-6
+    write /dev/cpuset/foreground/boost/cpus 0-6
+    write /dev/cpuset/background/cpus 0-1
     write /dev/cpuset/system-background/cpus 0-3
-
-    # And then initialize silver + gold
-    write /dev/cpuset/top-app/cpus 0-3
-    write /dev/cpuset/foreground/cpus 0-3
-    write /dev/cpuset/foreground/boost/cpus 0-3
-
     write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 0-2,4-7
-    write /dev/cpuset/foreground/boost/cpus 4-7
 
     # palm_sensor
     chown system system /sys/class/touch/touch_dev/palm_sensor
+    # Toggle glove_mode according to touch_sensitivity_mode
+on property:persist.vendor.touch_sensitivity_mode=0 && property:sys.boot_completed=1
+    write /sys/devices/platform/goodix_ts.0/game_mode "0 0 0 0"
+
+on property:persist.vendor.touch_sensitivity_mode=1 && property:sys.boot_completed=1
+    write /sys/devices/platform/goodix_ts.0/game_mode "1 2 2 0"
+
+    # Route touch_sensitivity_mode to persist
+on property:debug.touch_sensitivity_mode=0
+    setprop persist.vendor.touch_sensitivity_mode 0
+
+on property:debug.touch_sensitivity_mode=1
+    setprop persist.vendor.touch_sensitivity_mode 1
 
     #USB controller configuration
     setprop vendor.usb.rndis.func.name "gsi"

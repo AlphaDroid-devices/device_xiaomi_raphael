@@ -72,9 +72,6 @@ function configure_memory_parameters() {
     vmpres_file_min=$((minfree_5 + (minfree_5 - rem_minfree_4)))
     echo $vmpres_file_min > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
 
-    echo "15360,19200,23040,26880,34415,43737" > /sys/module/lowmemorykiller/parameters/minfree
-    echo 53059 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
-
     # Enable adaptive LMK for all targets &
     # use Google default LMK series for all 64-bit targets >=2GB.
     echo 1 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
@@ -131,12 +128,9 @@ case "$target" in
 	echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 
 	# cpuset parameters
-	echo 0-2 > /dev/cpuset/background/cpus
-	echo 0-3 > /dev/cpuset/system-background/cpus
-	echo 4-7 > /dev/cpuset/foreground/boost/cpus
-	echo 0-2,4-7 > /dev/cpuset/foreground/cpus
-	echo 0-7 > /dev/cpuset/top-app/cpus
-    echo 0-3 > /dev/cpuset/restricted/cpus
+        echo 0-1 > /dev/cpuset/background/cpus
+        echo 0-2 > /dev/cpuset/system-background/cpus
+        echo 0-3 > /dev/cpuset/restricted/cpus
 
 	# Turn off scheduler boost at the end
 	echo 0 > /proc/sys/kernel/sched_boost
@@ -165,7 +159,7 @@ case "$target" in
 
 	# configure input boost settings
 	echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
-	echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
+	echo 80 > /sys/module/cpu_boost/parameters/input_boost_ms
 
 	# Disable wsf, beacause we are using efk.
 	# wsf Range : 1..1000 So set to bare minimum value 1.
@@ -231,12 +225,55 @@ case "$target" in
 	    done
 	done
 
+    # Enable mem_latency governor for L3, LLCC, and DDR scaling
+        for memlat in $device/*cpu*-lat/devfreq/*cpu*-lat
+        do
+        echo "mem_latency" > $memlat/governor
+        echo 8 > $memlat/polling_interval
+        echo 400 > $memlat/mem_latency/ratio_ceil
+        done
+
+        # Enable userspace governor for L3 cdsp nodes
+        for l3cdsp in $device/*cdsp-cdsp-l3-lat/devfreq/*cdsp-cdsp-l3-lat
+        do
+        echo "cdspl3" > $l3cdsp/governor
+        done
+
+        # Enable compute governor for gold latfloor
+        for latfloor in $device/*cpu-ddr-latfloor*/devfreq/*cpu-ddr-latfloor*
+        do
+        echo "compute" > $latfloor/governor
+        echo 8 > $latfloor/polling_interval
+        done
+
+        # Gold L3 ratio ceil
+        for l3gold in $device/*cpu4-cpu-l3-lat/devfreq/*cpu4-cpu-l3-lat
+        do
+        echo 4000 > $l3gold/mem_latency/ratio_ceil
+        done
+
+        # Prime L3 ratio ceil
+        for l3prime in $device/*cpu7-cpu-l3-lat/devfreq/*cpu7-cpu-l3-lat
+        do
+        echo 20000 > $l3prime/mem_latency/ratio_ceil
+        done
+    done
+
+    # Setup readahead
+    find /sys/devices -name read_ahead_kb | while read node; do echo 128 > $node; done
+
     # memlat specific settings are moved to seperate file under
     # device/target specific folder
     setprop vendor.dcvs.prop 1
 
     configure_memory_parameters
+
+    echo "18432,23040,27648,32256,85296,120640" > /sys/module/lowmemorykiller/parameters/minfree
     ;;
 esac
 
-setprop vendor.post_boot.parsed 1
+case "$target" in
+    "msm8994" | "msm8992" | "msm8996" | "msm8998" | "sdm660" | "apq8098_latv" | "sdm845" | "sdm710" | "msmnile" | "qcs605" | "sm6150")
+        setprop vendor.post_boot.parsed 1
+    ;;
+esac
