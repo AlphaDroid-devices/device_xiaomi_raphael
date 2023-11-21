@@ -15,18 +15,6 @@
 // limitations under the License.
 
 cc_library_shared {
-    name: "android.hidl.base@1.0",
-
-    vendor: true,
-}
-
-cc_library_shared {
-    name: "android.hidl.manager@1.0",
-
-    vendor: true,
-}
-
-cc_library_shared {
     name: "android.hidl.base@1.0_system",
 
     stem: "android.hidl.base@1.0",
