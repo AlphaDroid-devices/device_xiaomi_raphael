@@ -123,23 +123,7 @@ persist.vendor.cne.feature=1
 # Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
 
-# Dalvik
-pm.dexopt.boot=verify
-pm.dexopt.first-boot=verify
-pm.dexopt.install=speed-profile
-dalvik.vm.image-dex2oat-filter=speed
-dalvik.vm.image-dex2oat-threads=8
-dalvik.vm.dex2oat-filter=speed
-dalvik.vm.dex2oat-threads=8
-dalvik.vm.dex2oat64.enabled=true
-
 # Display
-ro.surface_flinger.has_wide_color_display=true
-ro.surface_flinger.has_HDR_display=true
-ro.surface_flinger.use_color_management=true
-ro.surface_flinger.wcg_composition_dataspace=143261696
-ro.surface_flinger.protected_contents=true
-ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 vendor.display.comp_mask=0
 vendor.display.dataspace_saturation_matrix=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0
 vendor.display.disable_decimation=1
@@ -176,20 +160,22 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 vendor.gatekeeper.disable_spu=true
 
 # Graphics
-debug.egl.hw=0
 debug.mdpcomp.logs=0
-debug.sdm.support_writeback=0
-debug.sf.hw=0
+debug.sf.enable_hwc_vds=1
 debug.sf.auto_latch_unsignaled=true
+debug.sf.disable_client_composition_cache=1
 debug.sf.enable_gl_backpressure=1
-debug.sf.enable_transaction_tracing=false
-ro.hardware.egl=adreno
-ro.hardware.vulkan=adreno
-ro.opengles.version=196610
-vendor.gralloc.disable_ubwc=0
+debug.sf.treat_170m_as_sRGB=1
 debug.renderengine.backend=skiaglthreaded
 renderthread.skia.reduceopstasksplitting=true
+ro.hardware.egl=adreno
+ro.opengles.version=196610
+ro.hardware.vulkan=adreno
+ro.hwui.render_ahead=3
+vendor.gralloc.disable_ubwc=0
 debug.hwui.renderer=skiagl
+ro.hwui.render_ahead=3
+debug.sf.enable_transaction_tracing=false
 debug.sf.enable_egl_image_tracker=1
 
 # IFAAService
@@ -222,9 +208,17 @@ ro.vendor.se.type=eSE,HCE,UICC
 # PASR
 vendor.power.pasr.enabled=true
 
+# Memory
+ro.vendor.qti.va_aosp.support=1
+
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
-ro.vendor.perf.scroll_opt=true
+
+# App launch prefetching (IORapd)
+ro.iorapd.enable=false
+iorapd.perfetto.enable=false
+iorapd.readahead.enable=false
+persist.device_config.runtime_native_boot.iorap_readahead_enable=false
 
 # RIL
 persist.vendor.qti.telephony.vt_cam_interface=2
@@ -252,6 +246,10 @@ sys.vendor.shutdown.waittime=500
 # SoC
 ro.soc.manufacturer=QTI
 ro.soc.model=SM8150
+
+# Sensors
+persist.vendor.sensors.enable.mag_filter=true
+persist.vendor.uspsensor=default
 
 # Target specific Netflix custom property
 ro.netflix.bsp_rev=Q855-16947-1
@@ -284,3 +282,9 @@ persist.vendor.ims.disableADBLogs=1
 persist.vendor.ims.disableDebugLogs=1
 persist.vendor.ims.disableIMSLogs=1
 persist.vendor.ims.disableQXDMLogs=1
+
+# SurfaceFlinger
+debug.sf.early_phase_offset_ns=500000
+debug.sf.early_app_phase_offset_ns=500000
+debug.sf.early_gl_phase_offset_ns=3000000
+debug.sf.early_gl_app_phase_offset_ns=15000000
