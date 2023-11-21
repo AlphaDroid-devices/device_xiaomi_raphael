@@ -129,23 +129,24 @@ on property:sys.boot_completed=1
 
     # Uclamp tunings
 
-    setprop kernel.sched_util_clamp_min_rt_default 500
+    # dissable default for fix stuck at min freq
+    setprop kernel.sched_util_clamp_min_rt_default 0
 
     #top-app
     write /dev/cpuset/top-app/uclamp.max max
-    write /dev/cpuset/top-app/uclamp.min 10
+    write /dev/cpuset/top-app/uclamp.min 25
     write /dev/cpuset/top-app/uclamp.boosted 1
     write /dev/cpuset/top-app/uclamp.latency_sensitive 1
 
     #foreground
-    write /dev/cpuset/foreground/uclamp.max 50
-    write /dev/cpuset/foreground/uclamp.min 0
+    write /dev/cpuset/foreground/uclamp.max 80
+    write /dev/cpuset/foreground/uclamp.min 10
     write /dev/cpuset/foreground/uclamp.boosted 0
-    write /dev/cpuset/foreground/uclamp.latency_sensitive 0
+    write /dev/cpuset/foreground/uclamp.latency_sensitive 1
 
     #background
-    write /dev/cpuset/background/uclamp.max max
-    write /dev/cpuset/background/uclamp.min 20
+    write /dev/cpuset/background/uclamp.max 80
+    write /dev/cpuset/background/uclamp.min 0
     write /dev/cpuset/background/uclamp.boosted 0
     write /dev/cpuset/background/uclamp.latency_sensitive 0
 
@@ -154,6 +155,29 @@ on property:sys.boot_completed=1
     write /dev/cpuset/system-background/uclamp.min 0
     write /dev/cpuset/system-background/uclamp.boosted 0
     write /dev/cpuset/system-background/uclamp.latency_sensitive 0
+
+    #camera-daemon
+    write /dev/cpuset/camera-daemon/uclamp.max max
+    write /dev/cpuset/camera-daemon/uclamp.min 0
+    write /dev/cpuset/camera-daemon/uclamp.boosted 1
+    write /dev/cpuset/camera-daemon/uclamp.latency_sensitive 1
+
+    #display
+    write /dev/cpuset/display/uclamp.max max
+    write /dev/cpuset/display/uclamp.min 20
+    write /dev/cpuset/display/uclamp.boosted 0
+    write /dev/cpuset/display/uclamp.latency_sensitive 1
+
+    #nnapi-hal
+    write /dev/cpuctl/nnapi-hal/uclamp.max max
+    write /dev/cpuctl/nnapi-hal/uclamp.min 75
+    write /dev/cpuctl/nnapi-hal/uclamp.latency_sensitive 1
+
+    #game
+    write /dev/cpuset/game/uclamp.max max
+    write /dev/cpuset/game/uclamp.min 50
+    write /dev/cpuset/game/uclamp.boosted 1
+    write /dev/cpuset/game/uclamp.latency_sensitive 1
 
     # Runtime fs tuning
     write /sys/block/sda/queue/read_ahead_kb 128
