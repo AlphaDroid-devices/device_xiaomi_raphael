@@ -9,7 +9,6 @@ on post-fs-data
     # Override readahead to 2MiB during boot
 
 on property:vendor.post_boot.parsed=1
-
 # IRQ Tuning
 # IRQ 70: msm_drm0
 # IRQ 222: kgsl_3d0_irq
