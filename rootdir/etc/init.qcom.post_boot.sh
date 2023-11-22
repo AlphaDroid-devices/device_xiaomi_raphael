@@ -46,6 +46,11 @@ function configure_memory_parameters() {
     # Set allocstall_threshold to 0 for all targets.
     #
 
+    # Set Zram disk size=4gb
+    echo 4294967296 > /sys/block/zram0/disksize
+    mkswap /dev/block/zram0
+    swapon /dev/block/zram0 -p 32758
+
     # Read adj series and set adj threshold for PPR and ALMK.
     # This is required since adj values change from framework to framework.
     adj_series=`cat /sys/module/lowmemorykiller/parameters/adj`
