@@ -46,6 +46,9 @@ function configure_memory_parameters() {
     # Set allocstall_threshold to 0 for all targets.
     #
 
+    # set default algo zram to zstd
+    echo zstd > /sys/block/zram0/comp_algorithm
+
     # Read adj series and set adj threshold for PPR and ALMK.
     # This is required since adj values change from framework to framework.
     adj_series=`cat /sys/module/lowmemorykiller/parameters/adj`
