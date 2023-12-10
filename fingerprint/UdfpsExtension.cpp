@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#include <compositionengine/UdfpsExtension.h>
-#include <drm/sde_drm.h>
 #include <stdint.h>
+#include <drm/sde_drm.h>
+#include <compositionengine/UdfpsExtension.h>
 
 uint32_t getUdfpsZOrder(uint32_t z, bool touched) {
     if (touched) {

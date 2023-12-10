@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service.raphael"
+#define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service.xiaomi_raphael"
 
 #include "BiometricsFingerprint.h"
 
@@ -67,7 +67,7 @@ static bool readBool(int fd) {
     return c != '0';
 }
 
-}  // anonymous namespace
+} // anonymous namespace
 
 namespace android {
 namespace hardware {
@@ -98,9 +98,9 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
         }
 
         struct pollfd fodUiPoll = {
-                .fd = fd,
-                .events = POLLERR | POLLPRI,
-                .revents = 0,
+            .fd = fd,
+            .events = POLLERR | POLLPRI,
+            .revents = 0,
         };
 
         while (true) {
