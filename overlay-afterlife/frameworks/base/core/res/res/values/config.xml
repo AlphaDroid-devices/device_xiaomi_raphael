@@ -47,7 +47,7 @@
     <bool name="config_udfpsDisableNightLight">true</bool>
 
     <!-- Whether devices suports in-display fingerprint when screen is off -->
-    <bool name="config_supportScreenOffUdfps">true</bool>
+    <bool name="config_supportsScreenOffUdfps">true</bool>
 
     <!-- Display color inversion availability -->
     <bool name="config_displayInversionAvailable">false</bool>
