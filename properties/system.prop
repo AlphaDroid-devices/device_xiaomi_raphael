@@ -55,12 +55,12 @@ persist.vendor.radio.vdp_on_ims_cap=1
 # LMKD
 ro.config.low_ram=false
 ro.lmk.log_stats=true
+ro.lmk.thrashing_limit=200
+ro.lmk.psi_partial_stall_ms=120
+ro.lmk.kill_heaviest_task=true
 
 # Logd buffer size
 ro.logd.size=2M
-
-# Maintainer
-ro.spos.maintainer=DanipunK1
 
 # Media
 av.offload.enable=true
@@ -135,6 +135,3 @@ debug.media.transcoding.codec_max_operating_rate_1080P=120
 # System Server
 arm64.memtag.process.system_server=off
 
-# LMKD
-ro.config.low_ram=false
-ro.lmk.log_stats=true

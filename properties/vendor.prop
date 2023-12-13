@@ -147,7 +147,8 @@ vendor.gatekeeper.disable_spu=true
 # Graphics
 debug.sf.disable_client_composition_cache=1
 debug.sdm.support_writeback=0
-debug.sf.auto_latch_unsignaled=true
+debug.sf.latch_unsignaled=1
+debug.sf.auto_latch_unsignaled=0
 debug.sf.enable_gl_backpressure=1
 debug.renderengine.backend=skiaglthreaded
 persist.sys.sf.color_saturation=1.0
@@ -159,8 +160,13 @@ ro.hwui.render_ahead=3
 vendor.gralloc.disable_ubwc=0
 vendor.display.disable_scaler=1
 vendor.display.qdcm.disable_factory_mode=1
-persist.sys.sf.color_mode=9
+persist.sys.sf.color_mode=1
+persist.sys.sf.color_saturation=1.0
 renderthread.skia.reduceopstasksplitting=true
+debug.sf.predict_hwc_composition_strategy=0
+debug.sf.enable_transaction_tracing=false
+debug.sf.enable_egl_image_tracker=1
+vendor.perf.gestureflingboost.enable=true
 
 # IFAAService
 persist.vendor.sys.fp.udfps.location.X_Y=445,1931
