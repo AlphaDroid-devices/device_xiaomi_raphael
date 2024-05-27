@@ -17,6 +17,13 @@ genfscon sysfs /devices/platform/goodix_ts.0/udfps_enabled                      
 genfscon sysfs /devices/platform/goodix_ts.0/double_tap_pressed                                                                                     u:object_r:vendor_sysfs_sensors:s0
 genfscon sysfs /devices/platform/goodix_ts.0/double_tap_enabled                                                                                     u:object_r:vendor_sysfs_sensors:s0
 
+# Torch
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm8150l@5:qcom,leds@d300/leds/led:torch_0/brightness          u:object_r:sysfs_torch:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm8150l@5:qcom,leds@d300/leds/led:torch_0/max_brightness          u:object_r:sysfs_torch:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm8150l@5:qcom,leds@d300/leds/led:torch_1/brightness          u:object_r:sysfs_torch:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm8150l@5:qcom,leds@d300/leds/led:torch_1/max_brightness          u:object_r:sysfs_torch:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm8150l@5:qcom,leds@d300/leds/led:switch_2/brightness          u:object_r:sysfs_torch:s0
+
 # Wakeup source stats
 genfscon sysfs /devices/platform/goodix_ts.0/wakeup                                                                                                 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/890000.i2c/i2c-0/0-0010/890000.i2c:qcom,smb1390@10:qcom,charge_pump/wakeup                                     u:object_r:sysfs_wakeup:s0
