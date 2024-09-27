@@ -38,6 +38,8 @@ on init
     wait /dev/block/platform/soc/1d84000.ufshc
     symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
 
+    exec - system system -- /vendor/bin/boolx_kprofiles
+
     # Boot time fs tuning
     write /sys/block/sda/queue/iostats 0
     write /sys/block/sda/queue/scheduler cfq
@@ -66,6 +68,7 @@ on init
 
 on early-fs
     start vold
+    start boolx
 
     # Add a cpuset for the camera daemon
     # We want all cores for camera
