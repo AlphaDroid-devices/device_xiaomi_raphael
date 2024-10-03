@@ -459,6 +459,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libqti-perfd-client
 
+# Thermsl
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@2.0-service.qti
+
 # Power
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.2.vendor \
