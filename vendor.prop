@@ -228,6 +228,8 @@ debug.sf.latch_unsignaled=1
 debug.sf.auto_latch_unsignaled=0
 debug.sf.disable_backpressure=1
 debug.sf.enable_gl_backpressure=0
+debug.sf.enable_advanced_sf_phase_offset=1
+debug.sf.enable_hwc_vds=1
 debug.sf.enable_transaction_tracing=false
 debug.sf.predict_hwc_composition_strategy=0
 ro.hardware.egl=adreno
@@ -237,11 +239,6 @@ vendor.gralloc.disable_ubwc=0
 debug.sf.treat_170m_as_sRGB=1
 debug.renderengine.backend=skiaglthreaded
 renderthread.skia.reduceopstasksplitting=true
-
-# HWUI
-debug.hwui.renderer=skiagl
-debug.hwui.target_cpu_time_percent=30
-debug.hwui.use_hint_manager=true
 
 # IMS
 persist.vendor.ims.disableADBLogs=1
@@ -274,7 +271,6 @@ vendor.power.pasr.enabled=true
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
-ro.vendor.perf.scroll_opt=true
 
 # RIL
 persist.vendor.qti.telephony.vt_cam_interface=2
