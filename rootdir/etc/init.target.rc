@@ -38,8 +38,6 @@ on init
     wait /dev/block/platform/soc/1d84000.ufshc
     symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
 
-    exec - system system -- /vendor/bin/boolx_kprofiles
-
     # Boot time fs tuning
     write /sys/block/sda/queue/iostats 0
     write /sys/block/sda/queue/scheduler cfq
@@ -68,7 +66,6 @@ on init
 
 on early-fs
     start vold
-    start boolx
 
     # Add a cpuset for the camera daemon
     # We want all cores for camera
@@ -146,8 +143,6 @@ on boot
     chmod 0660 /sys/kernel/kprofiles/kp_mode
 
 on property:sys.boot_completed=1
-    # start boolx service at boot
-    setprop vendor.boolx.prop 1
     # STOP EATING MY BATTERY AFTER 100H OF UPTIME FUCK YOU
     stop statsd
 
@@ -273,14 +268,6 @@ service dcvs-sh /vendor/bin/init.qti.dcvs.sh
 
 on property:vendor.dcvs.prop=1
    start dcvs-sh
-
-service boolx /vendor/bin/boolx_kprofiles
-    class late_start
-    user root
-    group root system
-    disabled
-    oneshot
-    task_profiles ServiceCapacityLow
 
 on property:vendor.boolx.prop=1
    start boolx
