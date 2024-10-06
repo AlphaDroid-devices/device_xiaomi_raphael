@@ -209,8 +209,10 @@ case "$target" in
     # memlat specific settings are moved to seperate file under
     # device/target specific folder
     setprop vendor.dcvs.prop 1
+    setprop vendor.boolx.prop 1
     configure_memory_parameters
     ;;
 esac
+/vendor/bin/sh /vendor/bin/boolx_kprofiles
 
 setprop vendor.post_boot.parsed 1

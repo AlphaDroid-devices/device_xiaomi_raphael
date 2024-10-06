@@ -117,12 +117,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libaudio-resampler
 
-# Boolx Kprofiles Plus
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/battery.sh:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/battery.sh \
-    $(LOCAL_PATH)/rootdir/etc/balance.sh:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/balance.sh \
-    $(LOCAL_PATH)/rootdir/etc/performance.sh:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/performance.sh
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/configs/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf \
@@ -329,6 +323,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
     init.qti.dcvs.sh \
+    boolx_kprofiles \
     init.raphael_boolx.rc \
     init.raphael.rc \
     init.raphael.wlan.rc \
