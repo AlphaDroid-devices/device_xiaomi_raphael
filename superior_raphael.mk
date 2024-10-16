@@ -1,4 +1,4 @@
-# Copyright (C) 2020 LineageOS
+# Copyright (C) 2020 superiorOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,8 +20,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from raphael device
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common superior stuff.
+$(call inherit-product, vendor/superior/config/common.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
@@ -31,12 +31,14 @@ TARGET_HAS_UDFPS := true
 EXTRA_UDFPS_ANIMATIONS := true
 
 # EverestOS official flags
-EVEREST_MAINTAINER := OnettBoots
+MAINTAINER := OnettBoots
 EVEREST_BUILD_TYPE := UNOFFICIAL
 WITH_GAPPS := true
+WITH_GMS := true
+BUILD_WITH_GAPPS := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_raphael
+PRODUCT_NAME := superior_raphael
 PRODUCT_DEVICE := raphael
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 9T Pro
