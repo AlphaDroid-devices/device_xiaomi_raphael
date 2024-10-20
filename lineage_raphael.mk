@@ -21,21 +21,25 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
 # Inherit some common superior stuff.
-$(call inherit-product, vendor/superior/config/common.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
-TARGET_SUPPORTS_BLUR := true
 TARGET_HAS_UDFPS := true
 EXTRA_UDFPS_ANIMATIONS := true
 
-# EverestOS official flags
-MAINTAINER := OnettBoots
-EVEREST_BUILD_TYPE := UNOFFICIAL
-WITH_GAPPS := true
+TARGET_ENABLE_BLUR := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_SUPPORTS_CALL_RECORDING := true
 WITH_GMS := true
-BUILD_WITH_GAPPS := true
+TARGET_BUILD_PACKAGE := 3
+TARGET_INCLUDE_MATLOG := true
+
+# Maintainer
+ALPHA_BUILD_TYPE := Official
+ALPHA_MAINTAINER := onettboots
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := superior_raphael
