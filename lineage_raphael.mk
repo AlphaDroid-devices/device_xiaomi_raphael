@@ -1,4 +1,4 @@
-# Copyright (C) 2020 superiorOS
+# Copyright (C) 2020 lineageOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from raphael device
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
-# Inherit some common superior stuff.
+# Inherit some common lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Boot animation
@@ -42,7 +42,7 @@ ALPHA_BUILD_TYPE := Official
 ALPHA_MAINTAINER := onettboots
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := superior_raphael
+PRODUCT_NAME := lineage_raphael
 PRODUCT_DEVICE := raphael
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 9T Pro
