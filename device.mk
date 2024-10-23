@@ -25,6 +25,10 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
 
+# OtoMusicPlayer
+PRODUCT_PACKAGES += \
+    OtoMusicPlayer
+
 # Camera
 PRODUCT_PACKAGES += \
     libMegviiFacepp-0.5.2 \
