@@ -25,6 +25,11 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
 
+
+# XiaomiParts
+PRODUCT_PACKAGES += \
+    XiaomiDolby
+
 # OtoMusicPlayer
 PRODUCT_PACKAGES += \
     OtoMusicPlayer
