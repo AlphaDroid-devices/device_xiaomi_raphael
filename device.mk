@@ -29,6 +29,10 @@ TARGET_SCREEN_WIDTH := 1080
 PRODUCT_PACKAGES += \
     OtoMusicPlayer
 
+# Remove some prebuilt apps
+PRODUCT_PACKAGES += \
+    RemoveSomePackages
+
 # Camera
 PRODUCT_PACKAGES += \
     libMegviiFacepp-0.5.2 \
