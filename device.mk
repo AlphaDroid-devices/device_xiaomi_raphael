@@ -362,6 +362,10 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor
 
+# OtoMusicPlayer
+PRODUCT_PACKAGES += \
+    OtoMusicPlayer
+
 # KProfiles
 PRODUCT_PACKAGES += \
     KProfiles
