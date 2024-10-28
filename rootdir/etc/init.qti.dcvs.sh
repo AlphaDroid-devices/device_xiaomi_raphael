@@ -46,7 +46,7 @@
         #Enable compute governor for gold latfloor
         for latfloor in $device/*cpu-ddr-latfloor*/devfreq/*cpu-ddr-latfloor*
         do
-            echo "compute" > $latfloor/governor
+            echo "simple_ondemand" > $latfloor/governor
             echo 10 > $latfloor/polling_interval
         done
 
