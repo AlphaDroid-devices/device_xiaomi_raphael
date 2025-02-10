@@ -74,12 +74,6 @@ on init
     chmod 0664 /dev/fortsense_fp
     chown system system /dev/fortsense_fp
 
-    # Boot time uclamp tuning
-    write /dev/cpuctl/top-app/cpu.uclamp.min 15.90
-    write /dev/cpuctl/foreground/cpu.uclamp.min 15.90
-    write /dev/cpuctl/system/cpu.uclamp.min 15.90
-    write /dev/cpuctl/nnapi-hal/cpu.uclamp_min 51.20
-
     # RT uclamp setting
     write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
 
@@ -222,17 +216,6 @@ on property:sys.boot_completed=1
     # Kprofiles tune 
     write /sys/module/kprofiles/parameters/auto_kprofiles Y
     write /sys/module/kprofiles/parameters/kp_mode 2
-
-    # Setup final cpu.uclamp.min
-    write /dev/cpuctl/top-app/cpu.uclamp.min 0.00
-    write /dev/cpuctl/foreground/cpu.uclamp.min 0.00
-    write /dev/cpuctl/system/cpu.uclamp.min 0.00
-
-    # Set uclamp.max for some groups, which could indicate cpu importance used in scheduling
-    write /dev/cpuctl/background/cpu.uclamp.max 51.20
-    write /dev/cpuctl/system-background/cpu.uclamp.max 51.20
-    write /dev/cpuctl/dex2oat/cpu.uclamp.max 61.50
-    write /dev/cpuctl/camera-daemon/cpu.uclamp.min 51.20
 
     # Migrate tasks again in case kernel threads are created during boot
     copy_per_line /dev/cpuctl/tasks /dev/cpuctl/system/tasks

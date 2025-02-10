@@ -84,56 +84,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "BGUClampMaxBoost",
-      "Path": "/dev/cpuctl/background/cpu.uclamp.max",
-      "Values": [
-        "10.00",
-        "51.20"
-      ],
-      "DefaultIndex": 0,
-      "ResetOnInit": true
-    },
-    {
-      "Name": "Dex2oatUClampMaxBoost",
-      "Path": "/dev/cpuctl/dex2oat/cpu.uclamp.max",
-      "Values": [
-        "40.00",
-        "60.50"
-      ],
-      "DefaultIndex": 0,
-      "ResetOnInit": true
-    },
-    {
-      "Name": "TAUClampBoost",
-      "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
-      "Values": [
-        "76.50",
-        "40.90",
-        "1.00"
-      ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "FGUClampBoost",
-      "Path": "/dev/cpuctl/foreground/cpu.uclamp.min",
-      "Values": [
-        "15.90",
-        "61.50",
-        "0.00"
-      ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "MLUclampBoost",
-      "Path": "/dev/cpuctl/nnapi-hal/cpu.uclamp.min",
-      "Values": [
-        "0.00",
-        "81.20"
-      ],
-      "DefaultIndex": 0,
-      "ResetOnInit": true
-    },
-    {
       "Name": "GPUMaxFreq",
       "Path": "/sys/class/kgsl/kgsl-3d0/max_pwrlevel",
       "Values": [
@@ -449,30 +399,6 @@
       "Value": "1440000000"
     },
     {
-      "PowerHint": "LAUNCH",
-      "Node": "BGUClampMaxBoost",
-      "Duration": 1500,
-      "Value": "51.20"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "Dex2oatUClampMaxBoost",
-      "Duration": 1500,
-      "Value": "60.50"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "TAUClampBoost",
-      "Duration": 1500,
-      "Value": "40.90"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "FGUClampBoost",
-      "Duration": 1500,
-      "Value": "61.50"
-    },
-    {
       "PowerHint": "AUDIO_LAUNCH",
       "Node": "PMQoSCpuDmaLatency",
       "Duration": 2000,
@@ -482,18 +408,6 @@
       "PowerHint": "LAUNCH",
       "Type": "DoHint",
       "Value": "LAUNCH_EXTEND"
-    },
-    {
-      "PowerHint": "LAUNCH_EXTEND",
-      "Node": "BGUClampMaxBoost",
-      "Duration": 2000,
-      "Value": "51.20"
-    },
-    {
-      "PowerHint": "LAUNCH_EXTEND",
-      "Node": "Dex2oatUClampMaxBoost",
-      "Duration": 2000,
-      "Value": "60.50"
     },
     {
       "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
@@ -536,18 +450,6 @@
       "Value": "DISPLAY_CHANGE_GPU"
     },
     {
-      "PowerHint": "DISPLAY_CHANGE",
-      "Node": "TAUClampBoost",
-      "Duration": 5000,
-      "Value": "76.50"
-    },
-    {
-      "PowerHint": "DISPLAY_CHANGE",
-      "Node": "FGUClampBoost",
-      "Duration": 5000,
-      "Value": "15.90"
-    },
-    {
       "PowerHint": "DISPLAY_IDLE",
       "Type": "EndHint",
       "Value": "DISPLAY_UPDATE_IMMINENT"
@@ -557,12 +459,6 @@
       "Node": "DisplayWakeup",
       "Duration": 60,
       "Value": "1"
-    },
-    {
-      "PowerHint": "ML_ACC",
-      "Node": "MLUclampBoost",
-      "Duration": 2000,
-      "Value": "81.20"
     },
     {
       "PowerHint": "ML_ACC",
