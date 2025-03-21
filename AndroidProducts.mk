@@ -1,4 +1,4 @@
-# Copyright (C) 2020 alphaOS
+# Copyright (C) 2020 infinityOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,9 +13,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/alpha_raphael.mk
+    $(LOCAL_DIR)/infinity_raphael.mk
 
 COMMON_LUNCH_CHOICES := \
-    alpha_raphael-user \
-    alpha_raphael-userdebug \
-    alpha_raphael-eng
+    infinity_raphael-user \
+    infinity_raphael-userdebug \
+    infinity_raphael-eng

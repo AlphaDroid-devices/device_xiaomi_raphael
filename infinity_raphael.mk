@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/alpha/config/common_full_phone.mk)
+$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
@@ -31,11 +31,11 @@ TARGET_ENABLE_BLUR := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_SUPPORTS_CALL_RECORDING := true
-WITH_GMS := true
-TARGET_BUILD_PACKAGE := 3
+WITH_GAPPS := true
+
 # Maintainer
-ALPHA_BUILD_TYPE := Official
-ALPHA_MAINTAINER := onettboots
+INFINITY_BUILD_TYPE := Unofficial
+INFINITY_MAINTAINER := miyqwx
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := lineage_raphael

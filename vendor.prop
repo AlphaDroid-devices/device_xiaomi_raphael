@@ -318,3 +318,10 @@ wifi.aware.interface=wifi-aware0
 
 # Zygote
 zygote.critical_window.minute=10
+
+# Raphael Device
+ro.product.marketname=Redmi K20 Pro
+ro.infinity.soc=Snapdragon 8 Elite
+ro.infinity.battery=4000 mAh
+ro.infinity.display=1080 x 1920, 90 Hz
+ro.infinity.camera=50MP + 8MP + 2MP
