@@ -1,4 +1,4 @@
-# Copyright (C) 2020 alphaOS
+# Copyright (C) 2020 cloverOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,9 +13,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/alpha_raphael.mk
+    $(LOCAL_DIR)/clover_raphael.mk
 
 COMMON_LUNCH_CHOICES := \
-    alpha_raphael-user \
-    alpha_raphael-userdebug \
-    alpha_raphael-eng
+    clover_raphael-ap4a-user \
+    clover_raphael-ap4a-userdebug \
+    clover_raphael-ap4a-eng
