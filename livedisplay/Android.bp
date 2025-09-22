@@ -20,7 +20,7 @@ cc_binary {
     init_rc: ["vendor.lineage.livedisplay@2.1-service.raphael.rc"],
     relative_install_path: "hw",
     srcs: [
-        ":vendor.lineage.livedisplay@2.0-sdm-utils",
+        ":vendor.lineage.livedisplay-sdm-utils",
         "AntiFlicker.cpp",
         "SunlightEnhancement.cpp",
         "service.cpp",
@@ -31,10 +31,9 @@ cc_binary {
         "libbinder",
         "libhidlbase",
         "libutils",
-        "vendor.lineage.livedisplay@2.0",
-        "vendor.lineage.livedisplay@2.1",
+        "vendor.lineage.livedisplay",
     ],
     header_libs: [
-        "vendor.lineage.livedisplay@2.0-sdm-headers",
+        "vendor.lineage.livedisplay-sdm-headers",
     ],
 }
