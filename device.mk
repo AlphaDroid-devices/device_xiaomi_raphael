@@ -26,10 +26,6 @@ $(call inherit-product-if-exists, vendor/GcamBSG/GcamBSG-vendor.mk)
 # MiuiCamera
 $(call inherit-product, vendor/xiaomi/miuicamera/config.mk)
 
-# RRO fw_boost
-PRODUCT_PACKAGES += \
-    BoostFrameworkOverlay
-
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -47,7 +43,7 @@ PRODUCT_COPY_FILES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-arrow
 
 # OtoMusicPlayer
 PRODUCT_PACKAGES += \
@@ -338,11 +334,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libpsi.vendor \
     libtflite
-
-# Perf Jars
-PRODUCT_BOOT_JARS += \
-    QPerformance \
-    UxPerformance
 
 # IRQ balance config
 PRODUCT_COPY_FILES += \

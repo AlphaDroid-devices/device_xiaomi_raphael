@@ -1,4 +1,4 @@
-# Copyright (C) 2020 LineageOS
+# Copyright (C) 2020 arrowOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,8 +20,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from raphael device
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common arrow stuff.
+$(call inherit-product, vendor/arrow/config/common.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
@@ -34,12 +34,12 @@ TARGET_HAS_UDFPS := true
 TARGET_ENABLE_BLUR := true
 TARGET_SUPPORTS_QUICK_TAP := true
 # AlphaDroid
-ALPHA_BUILD_TYPE := OFFICIAL
-ALPHA_MAINTAINER := OnettBoots
-WITH_GAPPS := true
+ALPHA_BUILD_TYPE := UNOFFICIAL
+DEVICE_MAINTAINER := onettboots and miyqwx
+WITH_GAPPS := false
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_raphael
+PRODUCT_NAME := arrow_raphael
 PRODUCT_DEVICE := raphael
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 9T Pro

@@ -1,4 +1,4 @@
-# Copyright (C) 2020 LineageOS
+# Copyright (C) 2020 arrowOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,9 +13,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_raphael.mk
+    $(LOCAL_DIR)/arrow_raphael.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_raphael-user \
-    lineage_raphael-userdebug \
-    lineage_raphael-eng
+    arrow_raphael-user \
+    arrow_raphael-userdebug \
+    arrow_raphael-eng
